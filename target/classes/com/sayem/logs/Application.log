@@ -1,0 +1,57 @@
+01/08/2016 14:49:13 DEBUG devpinoyLogger:75 - Hello
+01/08/2016 14:49:13 DEBUG devpinoyLogger:76 - Properties loaded. Starting testing
+01/08/2016 14:49:13 DEBUG devpinoyLogger:82 - Intialize Suite xlsx
+01/08/2016 14:49:13 DEBUG devpinoyLogger:88 - Creator_Platform -- N
+01/08/2016 14:49:13 DEBUG devpinoyLogger:88 - VES_Test_Cases -- N
+01/08/2016 14:49:13 DEBUG devpinoyLogger:88 - Backstage_Test_Cases -- Y
+01/08/2016 14:49:13 DEBUG devpinoyLogger:93 - ******Executing the Suite******Backstage_Test_Cases
+01/08/2016 14:49:14 DEBUG devpinoyLogger:97 - Generate -- N
+01/08/2016 14:49:14 DEBUG devpinoyLogger:97 - RegisterWithFacebook -- Y
+01/08/2016 14:49:14 DEBUG devpinoyLogger:101 - Executing the test case -> RegisterWithFacebook
+01/08/2016 14:49:14 DEBUG devpinoyLogger:107 - Iteration number 1
+01/08/2016 14:49:14 DEBUG devpinoyLogger:149 - openBrowser
+01/08/2016 14:49:14 DEBUG devpinoyLogger:71 - Opening browser
+01/08/2016 14:49:22 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:22 DEBUG devpinoyLogger:149 - navigate
+01/08/2016 14:49:22 DEBUG devpinoyLogger:87 - Navigating to URL
+01/08/2016 14:49:41 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:41 DEBUG devpinoyLogger:149 - writeInInput
+01/08/2016 14:49:41 DEBUG devpinoyLogger:397 - Writing in text box
+01/08/2016 14:49:41 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:41 DEBUG devpinoyLogger:149 - writeInInput
+01/08/2016 14:49:41 DEBUG devpinoyLogger:397 - Writing in text box
+01/08/2016 14:49:41 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:41 DEBUG devpinoyLogger:149 - clickLink
+01/08/2016 14:49:41 DEBUG devpinoyLogger:132 - Clicking on link 
+01/08/2016 14:49:45 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:45 DEBUG devpinoyLogger:149 - clickLink
+01/08/2016 14:49:45 DEBUG devpinoyLogger:132 - Clicking on link 
+01/08/2016 14:49:45 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:45 DEBUG devpinoyLogger:149 - clickLink
+01/08/2016 14:49:45 DEBUG devpinoyLogger:132 - Clicking on link 
+01/08/2016 14:49:52 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:52 DEBUG devpinoyLogger:149 - uploadcampaignimagenot
+01/08/2016 14:49:52 DEBUG devpinoyLogger:685 - Not uploadcampaignimage
+01/08/2016 14:49:56 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:49:56 DEBUG devpinoyLogger:149 - sleep
+01/08/2016 14:49:56 DEBUG devpinoyLogger:1311 - Executing sleep Keyword
+01/08/2016 14:50:01 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:50:01 DEBUG devpinoyLogger:149 - uploadcampaignimage
+01/08/2016 14:50:01 DEBUG devpinoyLogger:698 - uploadcampaignimage
+01/08/2016 14:50:02 DEBUG devpinoyLogger:157 - PASS
+01/08/2016 14:50:05 DEBUG devpinoyLogger:107 - Iteration number 2
+01/08/2016 14:50:07 DEBUG devpinoyLogger:107 - Iteration number 3
+01/08/2016 14:50:08 DEBUG devpinoyLogger:107 - Iteration number 4
+01/08/2016 14:50:08 DEBUG devpinoyLogger:107 - Iteration number 5
+01/08/2016 14:50:09 DEBUG devpinoyLogger:107 - Iteration number 6
+01/08/2016 14:50:10 DEBUG devpinoyLogger:107 - Iteration number 7
+01/08/2016 14:50:10 DEBUG devpinoyLogger:107 - Iteration number 8
+01/08/2016 14:50:11 DEBUG devpinoyLogger:107 - Iteration number 9
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - Login -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - RequireValidation -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - LoginWithFacebook -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - Logout -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - LogoutWithFacebook -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:97 - ResetPassword -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:88 - My Account -- N
+01/08/2016 14:50:12 DEBUG devpinoyLogger:88 - Sales pages -- N

@@ -1,0 +1,12 @@
+11/03/2015 10:39:17 DEBUG devpinoyLogger:74 - Hello
+11/03/2015 10:39:17 DEBUG devpinoyLogger:75 - Properties loaded. Starting testing
+11/03/2015 10:39:17 DEBUG devpinoyLogger:81 - Intialize Suite xlsx
+11/03/2015 10:39:17 DEBUG devpinoyLogger:87 - Check out -- N
+11/03/2015 10:39:17 DEBUG devpinoyLogger:87 - Links verification -- N
+11/03/2015 10:39:17 DEBUG devpinoyLogger:87 - Login functionality -- Y
+11/03/2015 10:39:17 DEBUG devpinoyLogger:92 - ******Executing the Suite******Login functionality
+11/03/2015 10:39:18 DEBUG devpinoyLogger:96 - Register -- Y
+11/03/2015 10:39:18 DEBUG devpinoyLogger:100 - Executing the test case -> Register
+11/03/2015 10:39:18 DEBUG devpinoyLogger:106 - Iteration number 1
+11/03/2015 10:39:18 DEBUG devpinoyLogger:148 - LaunchApplication
+11/03/2015 10:39:18 DEBUG devpinoyLogger:74 - Executing LunchApplication

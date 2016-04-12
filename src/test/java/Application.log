@@ -1,0 +1,361 @@
+04/12/2016 10:17:16 DEBUG devpinoyLogger:76 - Hello
+04/12/2016 10:17:16 DEBUG devpinoyLogger:77 - Properties loaded. Starting testing
+04/12/2016 10:17:16 DEBUG devpinoyLogger:83 - Intialize Suite xlsx
+04/12/2016 10:17:18 DEBUG devpinoyLogger:89 - Creator_Platform -- N
+04/12/2016 10:17:18 DEBUG devpinoyLogger:89 - VES_Test_Cases -- Y
+04/12/2016 10:17:18 DEBUG devpinoyLogger:94 - ******Executing the Suite******VES_Test_Cases
+04/12/2016 10:17:18 DEBUG devpinoyLogger:98 - Login to Brand account -- Y
+04/12/2016 10:17:18 DEBUG devpinoyLogger:102 - Executing the test case -> Login to Brand account
+04/12/2016 10:17:18 DEBUG devpinoyLogger:108 - Iteration number 1
+04/12/2016 10:17:18 DEBUG devpinoyLogger:150 - openBrowser
+04/12/2016 10:17:18 DEBUG devpinoyLogger:74 - Opening browser
+04/12/2016 10:17:31 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:17:31 DEBUG devpinoyLogger:150 - navigate
+04/12/2016 10:17:31 DEBUG devpinoyLogger:92 - Navigating to URL
+04/12/2016 10:18:01 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:01 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:18:01 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:18:02 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:02 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:18:02 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:18:02 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:02 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:18:02 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:18:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:07 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:18:07 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:18:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:07 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:18:07 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:18:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:07 DEBUG devpinoyLogger:150 - verifyLinkText
+04/12/2016 10:18:07 DEBUG devpinoyLogger:175 - Verifying link Text
+04/12/2016 10:18:09 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:09 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:18:10 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:18:20 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:20 DEBUG devpinoyLogger:150 - workspaceDropList
+04/12/2016 10:18:20 DEBUG devpinoyLogger:583 - Selecting Expo
+04/12/2016 10:18:25 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:25 DEBUG devpinoyLogger:150 - brandDropList
+04/12/2016 10:18:25 DEBUG devpinoyLogger:607 - Selecting Expo
+04/12/2016 10:18:31 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:31 DEBUG devpinoyLogger:150 - groupDropList
+04/12/2016 10:18:31 DEBUG devpinoyLogger:632 - Selecting Admin
+04/12/2016 10:18:36 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:36 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:18:36 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:18:36 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:36 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:18:36 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:18:45 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:45 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:18:45 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:18:48 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:48 DEBUG devpinoyLogger:150 - ExplicitWait
+04/12/2016 10:18:48 DEBUG devpinoyLogger:1398 - Executing Explicitwait Keyword
+04/12/2016 10:18:51 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:18:51 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:18:51 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:19:01 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:01 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:19:01 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:19:01 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:01 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:19:01 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:19:11 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:11 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:19:11 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:19:11 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:11 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:19:11 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:19:12 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:12 DEBUG devpinoyLogger:150 - selectdate
+04/12/2016 10:19:12 DEBUG devpinoyLogger:669 - select date
+04/12/2016 10:19:13 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:13 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:19:13 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:19:23 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:23 DEBUG devpinoyLogger:150 - selectactive
+04/12/2016 10:19:23 DEBUG devpinoyLogger:655 - Selecting active
+04/12/2016 10:19:24 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:24 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:19:24 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:19:24 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:24 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:19:24 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:19:26 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:26 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:19:26 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:19:36 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:36 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:19:36 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:19:36 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:36 DEBUG devpinoyLogger:150 - ExplicitWait
+04/12/2016 10:19:36 DEBUG devpinoyLogger:1398 - Executing Explicitwait Keyword
+04/12/2016 10:19:46 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:46 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:19:46 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:19:46 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:46 DEBUG devpinoyLogger:150 - closeBrowser
+04/12/2016 10:19:46 DEBUG devpinoyLogger:539 - Closing the browser
+04/12/2016 10:19:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:19:55 DEBUG devpinoyLogger:108 - Iteration number 2
+04/12/2016 10:19:58 DEBUG devpinoyLogger:108 - Iteration number 3
+04/12/2016 10:20:01 DEBUG devpinoyLogger:108 - Iteration number 4
+04/12/2016 10:20:04 DEBUG devpinoyLogger:108 - Iteration number 5
+04/12/2016 10:20:07 DEBUG devpinoyLogger:108 - Iteration number 6
+04/12/2016 10:20:09 DEBUG devpinoyLogger:108 - Iteration number 7
+04/12/2016 10:20:12 DEBUG devpinoyLogger:108 - Iteration number 8
+04/12/2016 10:20:15 DEBUG devpinoyLogger:108 - Iteration number 9
+04/12/2016 10:20:18 DEBUG devpinoyLogger:108 - Iteration number 10
+04/12/2016 10:20:20 DEBUG devpinoyLogger:89 - Backstage_Test_Cases -- Y
+04/12/2016 10:20:20 DEBUG devpinoyLogger:94 - ******Executing the Suite******Backstage_Test_Cases
+04/12/2016 10:20:20 DEBUG devpinoyLogger:98 - Generate -- Y
+04/12/2016 10:20:20 DEBUG devpinoyLogger:102 - Executing the test case -> Generate
+04/12/2016 10:20:20 DEBUG devpinoyLogger:108 - Iteration number 1
+04/12/2016 10:20:20 DEBUG devpinoyLogger:150 - openBrowser
+04/12/2016 10:20:20 DEBUG devpinoyLogger:74 - Opening browser
+04/12/2016 10:20:31 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:31 DEBUG devpinoyLogger:150 - navigate
+04/12/2016 10:20:31 DEBUG devpinoyLogger:92 - Navigating to URL
+04/12/2016 10:20:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:49 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:20:49 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:20:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:49 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:20:49 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:20:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:49 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:20:49 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:20:55 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:55 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:20:55 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:20:55 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:55 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:20:55 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:20:55 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:55 DEBUG devpinoyLogger:150 - verifyLinkText
+04/12/2016 10:20:55 DEBUG devpinoyLogger:175 - Verifying link Text
+04/12/2016 10:20:58 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:20:58 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:20:58 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:21:08 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:08 DEBUG devpinoyLogger:150 - workspaceDropList
+04/12/2016 10:21:08 DEBUG devpinoyLogger:583 - Selecting Expo
+04/12/2016 10:21:14 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:14 DEBUG devpinoyLogger:150 - brandDropList
+04/12/2016 10:21:14 DEBUG devpinoyLogger:607 - Selecting Expo
+04/12/2016 10:21:19 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:19 DEBUG devpinoyLogger:150 - groupDropList
+04/12/2016 10:21:19 DEBUG devpinoyLogger:632 - Selecting Admin
+04/12/2016 10:21:24 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:24 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:21:24 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:21:24 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:24 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:21:24 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:21:29 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:29 DEBUG devpinoyLogger:150 - clickLinkCss
+04/12/2016 10:21:29 DEBUG devpinoyLogger:150 - Clicking on link 
+04/12/2016 10:21:34 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:34 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:21:34 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:21:43 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:43 DEBUG devpinoyLogger:150 - campaigndate
+04/12/2016 10:21:43 DEBUG devpinoyLogger:681 - campaigndate
+04/12/2016 10:21:45 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:45 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:21:45 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:21:55 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:55 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:21:55 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:21:55 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:21:55 DEBUG devpinoyLogger:150 - uploadcampaignimagenot1
+04/12/2016 10:21:55 DEBUG devpinoyLogger:708 - Not uploadcampaignimage
+04/12/2016 10:22:01 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:22:01 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:22:01 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:22:11 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:22:11 DEBUG devpinoyLogger:150 - verifyText
+04/12/2016 10:22:11 DEBUG devpinoyLogger:389 - Verifying the text
+04/12/2016 10:22:11 DEBUG devpinoyLogger:158 - FAIL -- text not verified  -- Wrong pixel ratio - images must be square
+04/12/2016 10:22:11 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:22:11 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:22:21 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:22:21 DEBUG devpinoyLogger:150 - uploadcampaignimage1
+04/12/2016 10:22:21 DEBUG devpinoyLogger:745 - uploadcampaignimage
+04/12/2016 10:22:27 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:22:27 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:22:27 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:22:37 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:22:37 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:22:37 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:22:57 DEBUG devpinoyLogger:158 - FAIL -- Not able to click on linkElement is not currently visible and so may not be interacted with
+Command duration or timeout: 20.11 seconds
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 16:57:40'
+System info: host: 'pclap-002', ip: '172.16.146.24', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5bb4f41b-2b93-4cbc-957a-dad59e19c6a8
+04/12/2016 10:22:57 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:22:57 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:23:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:07 DEBUG devpinoyLogger:150 - uploadcampaignimage1
+04/12/2016 10:23:07 DEBUG devpinoyLogger:745 - uploadcampaignimage
+04/12/2016 10:23:27 DEBUG devpinoyLogger:158 - FAILUnable to go back, Check if its openElement is not currently visible and so may not be interacted with
+Command duration or timeout: 20.03 seconds
+Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 16:57:40'
+System info: host: 'pclap-002', ip: '172.16.146.24', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_65'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5bb4f41b-2b93-4cbc-957a-dad59e19c6a8
+04/12/2016 10:23:28 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:23:28 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:38 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:23:38 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:23:38 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - clearInputText
+04/12/2016 10:23:38 DEBUG devpinoyLogger:1191 - Clearing input text box
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:23:38 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:23:38 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:23:38 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:38 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:23:38 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:23:48 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:48 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:49 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:49 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:49 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:49 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:49 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:49 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:49 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:49 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:50 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:50 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:50 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:50 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:50 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:50 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:50 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:50 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:50 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:50 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:50 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:50 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:51 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:51 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:23:51 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:23:51 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:51 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:23:51 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:23:51 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:23:51 DEBUG devpinoyLogger:150 - sleep
+04/12/2016 10:23:51 DEBUG devpinoyLogger:1386 - Executing sleep Keyword
+04/12/2016 10:24:01 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:01 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:01 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:02 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:02 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:02 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:02 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:02 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:02 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:02 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:02 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:02 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:03 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:03 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:03 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:03 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:03 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:03 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:03 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:03 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:03 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:03 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:03 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:03 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:04 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:04 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:04 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:04 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:04 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:04 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:04 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:04 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:04 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:05 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:05 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:05 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:05 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:05 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:05 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:05 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:05 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:24:05 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:24:06 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:06 DEBUG devpinoyLogger:150 - verifyText
+04/12/2016 10:24:06 DEBUG devpinoyLogger:389 - Verifying the text
+04/12/2016 10:24:06 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:06 DEBUG devpinoyLogger:150 - clearInputText
+04/12/2016 10:24:06 DEBUG devpinoyLogger:1191 - Clearing input text box
+04/12/2016 10:24:06 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:06 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:24:06 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:24:06 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:06 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:24:06 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:24:06 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:06 DEBUG devpinoyLogger:150 - writeInInput
+04/12/2016 10:24:06 DEBUG devpinoyLogger:405 - Writing in text box
+04/12/2016 10:24:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:07 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:07 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:07 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:07 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:07 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:07 DEBUG devpinoyLogger:150 - Enterproductiphone
+04/12/2016 10:24:07 DEBUG devpinoyLogger:1425 - Writing in text box
+04/12/2016 10:24:13 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:13 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:13 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:13 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:13 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:13 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:13 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:13 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:13 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:14 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:14 DEBUG devpinoyLogger:150 - clickLink
+04/12/2016 10:24:14 DEBUG devpinoyLogger:139 - Clicking on link 
+04/12/2016 10:24:14 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:14 DEBUG devpinoyLogger:150 - closeBrowser
+04/12/2016 10:24:14 DEBUG devpinoyLogger:539 - Closing the browser
+04/12/2016 10:24:14 DEBUG devpinoyLogger:158 - PASS
+04/12/2016 10:24:24 DEBUG devpinoyLogger:108 - Iteration number 2
+04/12/2016 10:24:31 DEBUG devpinoyLogger:108 - Iteration number 3
+04/12/2016 10:24:38 DEBUG devpinoyLogger:108 - Iteration number 4
+04/12/2016 10:24:45 DEBUG devpinoyLogger:108 - Iteration number 5
+04/12/2016 10:24:53 DEBUG devpinoyLogger:108 - Iteration number 6
+04/12/2016 10:25:00 DEBUG devpinoyLogger:108 - Iteration number 7
+04/12/2016 10:25:07 DEBUG devpinoyLogger:108 - Iteration number 8
+04/12/2016 10:25:14 DEBUG devpinoyLogger:108 - Iteration number 9
+04/12/2016 10:25:21 DEBUG devpinoyLogger:108 - Iteration number 10
+04/12/2016 10:25:28 DEBUG devpinoyLogger:89 - Test -- N
+04/12/2016 10:25:28 DEBUG devpinoyLogger:89 - Test1 -- N
