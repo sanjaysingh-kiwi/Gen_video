@@ -37,7 +37,7 @@ public class SendMail
 
         //This is for google
 
-        SendMail.sendMail("srikanta.sahoo@kiwitech.com",
+        SendMail.sendMail("",
                 "",
                 "smtp.gmail.com",
                 "465",
