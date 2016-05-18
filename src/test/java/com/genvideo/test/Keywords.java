@@ -1545,7 +1545,7 @@ public  String launchApp(){
         	Thread.sleep(10000l);
         	driver.switchTo().window(parentHandle); // switch back to the original window
         	Thread.sleep(10000l);
-            driver.findElement(By.xpath("html/body/div[2]/div/div/div/div/div/div[3]/div[2]/div/button[2]")).click();         
+            driver.findElement(By.xpath(".//*[@id='wrap']/div/div/div/div/div/div[3]/div/div/button[2]")).click();         
         }catch(Exception e){
             return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
