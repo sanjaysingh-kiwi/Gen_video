@@ -137,6 +137,9 @@ public class Keywords {
 
     public String clickLink(String object,String data){
         APP_LOGS.debug("Clicking on link ");
+        if(object.equals("creator_visit_offer")){
+        	System.out.println("got visit offer");
+        }
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
@@ -1545,7 +1548,7 @@ public  String launchApp(){
         	Thread.sleep(10000l);
         	driver.switchTo().window(parentHandle); // switch back to the original window
         	Thread.sleep(10000l);
-            driver.findElement(By.xpath("//button[@class='btn btn-lg btn-warning2']")).click();         
+            driver.findElement(By.xpath("//button[@class='btn btn-lg btn-warning2'][2]")).click();         
         }catch(Exception e){
             return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
