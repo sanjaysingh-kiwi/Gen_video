@@ -96,7 +96,7 @@ public class Keywords {
             driver.navigate().to(data);
            
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Not able to navigate";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to navigate";
         }
         return Constants.KEYWORD_PASS;
     }
@@ -143,7 +143,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Not able to click on link"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to click on link"+e.getMessage();
         }
 
         return Constants.KEYWORD_PASS;
@@ -154,7 +154,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Not able to click on link"+e.getMessage();
+            e.printStackTrace();e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to click on link"+e.getMessage();
         }
 
         return Constants.KEYWORD_PASS;
@@ -186,7 +186,7 @@ public class Keywords {
                 return Constants.KEYWORD_FAIL+" -- Link text not verified";
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Link text not verified"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Link text not verified"+e.getMessage();
 
         }
 
@@ -199,7 +199,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Not able to click on Button"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to click on Button"+e.getMessage();
         }
 
 
@@ -211,7 +211,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Not able to click on Button"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to click on Button"+e.getMessage();
         }
 
 
@@ -229,7 +229,7 @@ public class Keywords {
             else
                 return Constants.KEYWORD_FAIL+" -- Button text not verified "+actual+" -- "+expected;
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Object not found "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Object not found "+e.getMessage();
         }
 
     }
@@ -350,7 +350,7 @@ public class Keywords {
             if(checked==null)// checkbox is unchecked
                 driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" - Could not find checkbo";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" - Could not find checkbo";
         }
         return Constants.KEYWORD_PASS;
 
@@ -363,7 +363,7 @@ public class Keywords {
             if(checked!=null)
                 driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" - Could not find checkbox";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" - Could not find checkbox";
         }
         return Constants.KEYWORD_PASS;
 
@@ -380,7 +380,7 @@ public class Keywords {
                 return Constants.KEYWORD_FAIL + " - Not selected";
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" - Could not find checkbox";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" - Could not find checkbox";
 
         }
 
@@ -399,7 +399,7 @@ public class Keywords {
             else
                 return Constants.KEYWORD_FAIL+" -- text not verified "+actual+" -- "+expected;
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Object not found "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Object not found "+e.getMessage();
         }
 
     }
@@ -410,7 +410,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(data);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -423,7 +423,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).sendKeys(data);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -443,7 +443,7 @@ public class Keywords {
             }
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to find input box "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to find input box "+e.getMessage();
 
         }
     }
@@ -471,7 +471,7 @@ public class Keywords {
             else
                 return Constants.KEYWORD_FAIL+" -- Title not verified "+expectedTitle+" -- "+actualTitle;
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Error in retrieving title";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Error in retrieving title";
         }
     }
 
@@ -480,7 +480,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object)));
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Object doest not exist";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Object doest not exist";
         }
 
 
@@ -492,7 +492,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Not able to click";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Not able to click";
         }
         return Constants.KEYWORD_PASS;
     }
@@ -502,7 +502,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Not able to click";
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Not able to click";
         }
         return Constants.KEYWORD_PASS;
     }
@@ -533,7 +533,7 @@ public class Keywords {
                 }
             }
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
     }
@@ -543,7 +543,7 @@ public class Keywords {
         try{
             driver.close();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -555,7 +555,7 @@ public class Keywords {
             driver.manage().deleteAllCookies();
             driver.navigate().refresh();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable delete all the cookies from Browser"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable delete all the cookies from Browser"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -568,7 +568,7 @@ public class Keywords {
         try{
             driver.quit();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to close browser. Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -675,7 +675,7 @@ public class Keywords {
         	driver.findElement(By.xpath(".//*[@id='startdate']")).click();  
         	driver.findElement(By.xpath(".//*[@id='engagement-orders-builder']/div/div[3]/div/section[1]/div/div/form/div[2]/div[1]/div[3]/div[1]/div[1]/table/tbody/tr[5]/td[7]/button")).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -687,7 +687,7 @@ public class Keywords {
         	driver.findElement(By.xpath(".//*[@id='wrap']/div/div[1]/div/div/div/div/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/div/ng-form/div[2]/div/input")).click();  
         	driver.findElement(By.xpath(".//*[@id='wrap']/div/div[1]/div/div/div/div/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/div/ng-form/div[2]/div/div[1]/table/tbody/tr[6]/td[1]/button")).click();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -702,7 +702,7 @@ public class Keywords {
         	//WebElement element= driver.findElement(By.name("image-upload"));
         	//element.sendKeys("//Users//kiwitech//Desktop//test.jpg");
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -726,7 +726,7 @@ public class Keywords {
         	robot.keyPress(KeyEvent.VK_ENTER);
         	robot.keyRelease(KeyEvent.VK_ENTER);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -739,7 +739,7 @@ public class Keywords {
         	Runtime.getRuntime().exec("C:/Users/user/Desktop/upload.exe");
         	
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -764,7 +764,7 @@ public class Keywords {
         	robot.keyRelease(KeyEvent.VK_ENTER);
         	
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -823,7 +823,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(Keys.ENTER);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -834,7 +834,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(Keys.TAB);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -845,7 +845,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).sendKeys(Keys.ENTER);
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -875,7 +875,7 @@ public class Keywords {
             // driver.switchTo().window(mainWindowHandle);
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to handle windows, See log4j report for more info"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to handle windows, See log4j report for more info"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -886,7 +886,7 @@ public class Keywords {
         try {
             ((JavascriptExecutor)driver).executeScript("document.getElementById('"+object+"').click()");
         } catch (Exception e) {
-            return Constants.KEYWORD_FAIL+"Unable to click, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to click, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
     }
@@ -896,7 +896,7 @@ public class Keywords {
         try {
             ((JavascriptExecutor)driver).executeScript("document.getElementById('"+object+"').value='"+data+"'");
         } catch (Exception e) {
-            return Constants.KEYWORD_FAIL+"Unable to write, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to write, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
     }
@@ -907,7 +907,7 @@ public class Keywords {
         try{
             driver.navigate().back();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -919,7 +919,7 @@ public class Keywords {
         try{
             driver.navigate().forward();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to go back, Check if its open"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -950,7 +950,7 @@ public class Keywords {
 
             }
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" -- Link text not verified"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Link text not verified"+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1170,7 +1170,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(Keys.chord(data));
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to select "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to select "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1183,7 +1183,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).sendKeys(Keys.chord(data));
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to select "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to select "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1196,7 +1196,7 @@ public class Keywords {
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).clear();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to clear input text "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to clear input text "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1209,7 +1209,7 @@ public class Keywords {
         try{
             driver.findElement(By.cssSelector(OR.getProperty(object))).clear();
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to clear input text "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to clear input text "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1226,7 +1226,7 @@ public class Keywords {
             builder.moveToElement(menu).build().perform();
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -1242,7 +1242,7 @@ public class Keywords {
             builder.moveToElement(menu).build().perform();
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -1258,7 +1258,7 @@ public class Keywords {
             builder.doubleClick(menu).build().perform();
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Unable to mouse hover"+e.getMessage();
         }
         return Constants.KEYWORD_PASS;
 
@@ -1360,7 +1360,7 @@ public class Keywords {
             }
 
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+"Error -->"+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+"Error -->"+e.getMessage();
         }
 
         return Constants.KEYWORD_PASS;
@@ -1392,7 +1392,7 @@ public class Keywords {
 		
 			Thread.sleep(10000l);
 		}catch(Exception e){
-			return Constants.KEYWORD_FAIL+" -- Not able to sleep";	
+			e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to sleep";	
 		}
 			
 		return Constants.KEYWORD_PASS;
@@ -1404,7 +1404,7 @@ public class Keywords {
 			WebDriverWait wait = new WebDriverWait(driver, 5);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(OR.getProperty(object))));
   }catch(Exception e){
-		return Constants.KEYWORD_FAIL+" -- Not able to wait";
+		e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to wait";
 	}
 	return Constants.KEYWORD_PASS;
 
@@ -1418,7 +1418,7 @@ public class Keywords {
             	System.out.println(i);
             }
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1434,7 +1434,7 @@ public class Keywords {
           
             
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1448,7 +1448,7 @@ public String closeApp(String object,String data){
 		driver1.closeApp();
 	    //driver1.resetApp();
 		}catch(Exception e){
-			return Constants.KEYWORD_FAIL+" -- Not able to close app";
+			e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to close app";
 			
 		}
 		return Constants.KEYWORD_PASS;
@@ -1462,7 +1462,7 @@ public  String launchApp(){
 		
 			driver1.launchApp();
 		}catch(Exception e){
-			return Constants.KEYWORD_FAIL+" -- Not able to launchapp";	
+			e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to launchapp";	
 		}
 			
 		return Constants.KEYWORD_PASS;
@@ -1474,7 +1474,7 @@ public  String launchApp(){
 			
 			driver1.quit();
 		}catch(Exception e){
-			return Constants.KEYWORD_FAIL+" -- Not able to quit";
+			e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to quit";
 		}
 			
 		return Constants.KEYWORD_PASS;
@@ -1486,7 +1486,7 @@ public  String launchApp(){
 			
 			driver1.scrollTo(OR.getProperty(object));
 		}catch(Exception e){
-			return Constants.KEYWORD_FAIL+" -- Not able to scroll";
+			e.printStackTrace();return Constants.KEYWORD_FAIL+" -- Not able to scroll";
 		}
 		return Constants.KEYWORD_PASS;
 	}
@@ -1517,7 +1517,7 @@ public  String launchApp(){
         	driver.switchTo().window(parentHandle); // switch back to the original window
         	       
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+            e.printStackTrace();return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
@@ -1550,7 +1550,8 @@ public  String launchApp(){
         	Thread.sleep(10000l);
             driver.findElement(By.xpath("(//button[@class='btn btn-lg btn-warning2'])[2]")).click();         
         }catch(Exception e){
-            return Constants.KEYWORD_FAIL+" Unable to write "+e.getMessage();
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " Unable to write "+e.getMessage();
 
         }
         return Constants.KEYWORD_PASS;
