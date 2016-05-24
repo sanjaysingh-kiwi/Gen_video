@@ -83,7 +83,7 @@ public class Keywords {
             driver=new ChromeDriver();
 
         long implicitWaitTime=Long.parseLong(CONFIG.getProperty("implicitwait"));
-        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.MINUTES);
         return Constants.KEYWORD_PASS;
 
     }
@@ -137,9 +137,6 @@ public class Keywords {
 
     public String clickLink(String object,String data){
         APP_LOGS.debug("Clicking on link ");
-        if(object.equals("creator_visit_offer")){
-        	System.out.println("got visit offer");
-        }
         try{
             driver.findElement(By.xpath(OR.getProperty(object))).click();
         }catch(Exception e){
