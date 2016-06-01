@@ -83,7 +83,7 @@ public class Keywords {
             driver=new ChromeDriver();
 
         long implicitWaitTime=Long.parseLong(CONFIG.getProperty("implicitwait"));
-        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.MINUTES);
+        driver.manage().timeouts().implicitlyWait(implicitWaitTime, TimeUnit.SECONDS);
         return Constants.KEYWORD_PASS;
 
     }
