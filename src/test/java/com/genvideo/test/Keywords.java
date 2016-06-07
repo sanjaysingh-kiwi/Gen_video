@@ -151,6 +151,21 @@ public class Keywords {
 		return Constants.KEYWORD_PASS;
 	}
 
+	public String clickSubmitButton(String object, String data) {
+		APP_LOGS.debug("Clicking on Submit button ");
+		try {
+			((JavascriptExecutor) driver).executeScript("window.scrollTo(0,500)");
+			driver.findElement(By.xpath(OR.getProperty(object))).click();
+			Thread.sleep(10000L);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
+					+ e.getMessage();
+		}
+
+		return Constants.KEYWORD_PASS;
+	}
+
 	public String clickLinkCss(String object, String data) {
 		APP_LOGS.debug("Clicking on link ");
 		try {
@@ -445,6 +460,23 @@ public class Keywords {
 			if (object.equals("campaign_title")) {
 				campaign_title = data;
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " Unable to write "
+					+ e.getMessage();
+
+		}
+		return Constants.KEYWORD_PASS;
+
+	}
+	
+	public String setCampaignStatus(String object, String data) {
+		APP_LOGS.debug("Setting Campaign Status");
+		try {
+			Thread.sleep(5000L);
+			WebElement dropdown = driver.findElement(By.xpath(OR.getProperty(object)));
+			Select select = new Select(dropdown);
+			select.selectByVisibleText(data);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
@@ -925,10 +957,13 @@ public class Keywords {
 			SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 			driver.findElement(By.xpath("//div[@class='input-group']/input"))
 					.sendKeys(format.format(newDate));
+			Thread.sleep(2000L);
+			driver.findElement(By.xpath("//div[@class='input-group']/input"))
+					.click();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Constants.KEYWORD_FAIL
-					+ "Unable to enter campaign due date" + e.getMessage();
+			return Constants.KEYWORD_FAIL + "Unable to enter campaign due date"
+					+ e.getMessage();
 		}
 		return Constants.KEYWORD_PASS;
 
@@ -1798,16 +1833,18 @@ public class Keywords {
 	public String clickWrenchOnCurrentCampaign(String object, String data) {
 		APP_LOGS.debug("Current Campaign");
 		try {
-			Thread.sleep(5000L);
+			Thread.sleep(2000L);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
 			String xpath = "//div[@class='campaign-content']//h3[contains(text(),'"
 					+ dt.format(date)
 					+ "')]/ancestor::div[@class='campaign-content']//h3[contains(@class,'title')]";
 			List<WebElement> elements = driver.findElements(By.xpath(xpath));
 			for (WebElement element : elements) {
-				// WebElement titleElement =
-				// element.findElement(By.xpath("//h3[contains(@class,'title')]"));
 				String title = element.getText().trim();
 				if (title.equals(campaign_title.trim())) {
+					wait.until(ExpectedConditions.elementToBeClickable(element
+							.findElement(By
+									.xpath("//i[@class='fa fa-wrench pr-5']"))));
 					element.findElement(
 							By.xpath("//i[@class='fa fa-wrench pr-5']"))
 							.click();
