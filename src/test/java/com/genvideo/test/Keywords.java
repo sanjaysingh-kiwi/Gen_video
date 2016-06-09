@@ -154,7 +154,7 @@ public class Keywords {
 	public String clickSubmitButton(String object, String data) {
 		APP_LOGS.debug("Clicking on Submit button ");
 		try {
-			((JavascriptExecutor) driver).executeScript("window.scrollTo(0,500)");
+//			((JavascriptExecutor) driver).executeScript("window.scrollTo(0,500)");
 			driver.findElement(By.xpath(OR.getProperty(object))).click();
 			Thread.sleep(10000L);
 		} catch (Exception e) {
@@ -473,7 +473,7 @@ public class Keywords {
 	public String setCampaignStatus(String object, String data) {
 		APP_LOGS.debug("Setting Campaign Status");
 		try {
-			Thread.sleep(5000L);
+			Thread.sleep(10000L);
 			WebElement dropdown = driver.findElement(By.xpath(OR.getProperty(object)));
 			Select select = new Select(dropdown);
 			select.selectByVisibleText(data);
