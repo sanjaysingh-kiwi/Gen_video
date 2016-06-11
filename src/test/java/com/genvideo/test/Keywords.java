@@ -10,8 +10,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Predicate;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -154,9 +157,11 @@ public class Keywords {
 	public String clickSubmitButton(String object, String data) {
 		APP_LOGS.debug("Clicking on Submit button ");
 		try {
-//			((JavascriptExecutor) driver).executeScript("window.scrollTo(0,500)");
+			// ((JavascriptExecutor)
+			// driver).executeScript("window.scrollTo(0,500)");
 			driver.findElement(By.xpath(OR.getProperty(object))).click();
-			Thread.sleep(10000L);
+			Thread.sleep(2000L);
+			// driver.navigate().refresh();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
@@ -456,10 +461,12 @@ public class Keywords {
 		APP_LOGS.debug("Writing in text box");
 
 		try {
-			driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(data);
 			if (object.equals("campaign_title")) {
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+				data = data.concat(dateFormat.format(date).toString());
 				campaign_title = data;
 			}
+			driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(data);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
@@ -469,12 +476,19 @@ public class Keywords {
 		return Constants.KEYWORD_PASS;
 
 	}
-	
+
+	public void waitForSpinner() {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By
+				.xpath("//div[@class='spinner-container short ng-hide']")));
+	}
+
 	public String setCampaignStatus(String object, String data) {
 		APP_LOGS.debug("Setting Campaign Status");
 		try {
-			Thread.sleep(10000L);
-			WebElement dropdown = driver.findElement(By.xpath(OR.getProperty(object)));
+			waitForSpinner();
+			WebElement dropdown = driver.findElement(By.xpath(OR
+					.getProperty(object)));
 			Select select = new Select(dropdown);
 			select.selectByVisibleText(data);
 		} catch (Exception e) {
@@ -484,7 +498,6 @@ public class Keywords {
 
 		}
 		return Constants.KEYWORD_PASS;
-
 	}
 
 	public String writeInInputCss(String object, String data) {
@@ -799,7 +812,6 @@ public class Keywords {
 	public String campaigndate(String object, String data) {
 		APP_LOGS.debug("campaigndate");
 		try {
-
 			driver.findElement(
 					By.xpath(".//*[@id='wrap']/div/div[1]/div/div/div/div/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/div/ng-form/div[2]/div/input"))
 					.click();
@@ -943,13 +955,13 @@ public class Keywords {
 					+ e.getMessage();
 
 		}
-
 		return Constants.KEYWORD_PASS;
 	}
 
 	public String campaignDueDate(String object, String data) {
 		APP_LOGS.debug("campaignDueDate");
 		try {
+			waitForSpinner();
 			Calendar calender = new GregorianCalendar();
 			calender.setTime(date);
 			calender.add(Calendar.DATE, 30);
@@ -1830,32 +1842,47 @@ public class Keywords {
 
 	// not a keyword
 
+
 	public String clickWrenchOnCurrentCampaign(String object, String data) {
 		APP_LOGS.debug("Current Campaign");
 		try {
-			Thread.sleep(2000L);
-			WebDriverWait wait = new WebDriverWait(driver, 30);
+			Thread.sleep(15000L);
+			WebDriverWait wait = new WebDriverWait(driver, 60);
 			String xpath = "//div[@class='campaign-content']//h3[contains(text(),'"
 					+ dt.format(date)
-					+ "')]/ancestor::div[@class='campaign-content']//h3[contains(@class,'title')]";
-			List<WebElement> elements = driver.findElements(By.xpath(xpath));
-			for (WebElement element : elements) {
-				String title = element.getText().trim();
-				if (title.equals(campaign_title.trim())) {
-					wait.until(ExpectedConditions.elementToBeClickable(element
-							.findElement(By
-									.xpath("//i[@class='fa fa-wrench pr-5']"))));
-					element.findElement(
-							By.xpath("//i[@class='fa fa-wrench pr-5']"))
-							.click();
-					break;
-				}
-			}
+					+ "')]/ancestor::div[@class='campaign-content']//h3[contains(text(),'"
+					+ campaign_title.trim()
+					+ "')]//i[@class='fa fa-wrench pr-5']";
+			wait.until(ExpectedConditions.elementToBeClickable(driver
+					.findElement(By
+							.xpath(xpath))));
+			WebElement element = driver.findElement(By.xpath(xpath));
+					element.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
 					+ e.getMessage();
 
+		}
+		return Constants.KEYWORD_PASS;
+
+	}
+	
+	public String clickWrenchOnLiveCampaign(String object, String data) {
+		APP_LOGS.debug("Current Live Campaign");
+		try {
+			Thread.sleep(15000L);
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			String xpath = "//div[@class='status live']/parent::div//div[@class='campaign-content']//h3[contains(text(),'"
+					+ campaign_title.trim()
+					+ "')]//i[@class='fa fa-wrench pr-5']";
+			wait.until(ExpectedConditions.elementToBeClickable(driver
+					.findElement(By
+							.xpath(xpath))));
+			WebElement element = driver.findElement(By.xpath(xpath));
+					element.click();
+		} catch (Exception e) {
+			return clickWrenchOnCurrentCampaign("", "");
 		}
 		return Constants.KEYWORD_PASS;
 
