@@ -150,7 +150,6 @@ public class Keywords {
 			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
 					+ e.getMessage();
 		}
-
 		return Constants.KEYWORD_PASS;
 	}
 
