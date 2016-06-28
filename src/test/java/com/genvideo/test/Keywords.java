@@ -477,7 +477,7 @@ public class Keywords {
 	}
 
 	public void waitForSpinner() {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By
 				.xpath("//div[@class='spinner-container short ng-hide']")));
 	}
