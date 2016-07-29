@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -456,16 +457,75 @@ public class Keywords {
 
 	}
 
+	private void playVideo() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("jwplayer().play()");
+	}
+
+	private void pauseVideo() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("jwplayer().pause()");
+	}
+
+	private String getPlayerState() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		return js.executeScript("return jwplayer().getState()").toString();
+	}
+
+	public String backstageTestVideo(String object, String data) {
+		APP_LOGS.debug("Testing Video from backstage");
+		try {
+
+			// Waiting for player to load
+			WebDriverWait wait = new WebDriverWait(driver, 90);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By
+					.xpath("//a[@id='beforeswfanchor0']")));
+
+			switch (data) {
+			case "Pause":
+				pauseVideo();
+				break;
+			case "Play":
+				playVideo();
+				break;
+			}
+
+			APP_LOGS.debug("Video is now " + data + "mode");
+
+			return Constants.KEYWORD_PASS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + "Exception playing video"
+					+ e.getMessage();
+		}
+
+	}
+
 	public String writeInInput(String object, String data) {
 		APP_LOGS.debug("Writing in text box");
 
 		try {
 			if (object.equals("campaign_title")) {
-				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+				SimpleDateFormat dateFormat = new SimpleDateFormat(
+						"yyyyMMddHHmmss");
 				data = data.concat(dateFormat.format(date).toString());
 				campaign_title = data;
 			}
 			driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(data);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " Unable to write "
+					+ e.getMessage();
+
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public String writeInInputID(String object, String data) {
+		APP_LOGS.debug("Writing in text box");
+
+		try {
+			driver.findElement(By.id(OR.getProperty(object))).sendKeys(data);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
@@ -970,7 +1030,7 @@ public class Keywords {
 					.sendKeys(format.format(newDate));
 			Thread.sleep(2000L);
 			driver.findElement(By.xpath("//div[@class='input-group']/input"))
-					.click();
+					.sendKeys(Keys.TAB);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + "Unable to enter campaign due date"
@@ -1647,9 +1707,7 @@ public class Keywords {
 
 	public String sleep(String object, String data) {
 		APP_LOGS.debug("Executing sleep Keyword");
-
 		try {
-
 			Thread.sleep(10000l);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -1841,7 +1899,6 @@ public class Keywords {
 
 	// not a keyword
 
-
 	public String clickWrenchOnCurrentCampaign(String object, String data) {
 		APP_LOGS.debug("Current Campaign");
 		try {
@@ -1853,10 +1910,9 @@ public class Keywords {
 					+ campaign_title.trim()
 					+ "')]//i[@class='fa fa-wrench pr-5']";
 			wait.until(ExpectedConditions.elementToBeClickable(driver
-					.findElement(By
-							.xpath(xpath))));
+					.findElement(By.xpath(xpath))));
 			WebElement element = driver.findElement(By.xpath(xpath));
-					element.click();
+			element.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
@@ -1866,7 +1922,7 @@ public class Keywords {
 		return Constants.KEYWORD_PASS;
 
 	}
-	
+
 	public String clickWrenchOnLiveCampaign(String object, String data) {
 		APP_LOGS.debug("Current Live Campaign");
 		try {
@@ -1876,12 +1932,46 @@ public class Keywords {
 					+ campaign_title.trim()
 					+ "')]//i[@class='fa fa-wrench pr-5']";
 			wait.until(ExpectedConditions.elementToBeClickable(driver
-					.findElement(By
-							.xpath(xpath))));
+					.findElement(By.xpath(xpath))));
 			WebElement element = driver.findElement(By.xpath(xpath));
-					element.click();
+			element.click();
 		} catch (Exception e) {
 			return clickWrenchOnCurrentCampaign("", "");
+		}
+		return Constants.KEYWORD_PASS;
+
+	}
+
+	public String createVideoList(String object, String data) {
+		APP_LOGS.debug("Create and Mail video lists");
+		try {
+			List<WebElement> element = driver.findElements(By.xpath(OR
+					.getProperty("checkboxes_video")));
+			Random random = new Random();
+			int limit = random.nextInt(element.size() - 1) + 1;
+			Collections.shuffle(element);
+			while (limit != 0) {
+				element.get(limit).click();
+				limit--;
+			}
+			driver.findElement(By.xpath(OR.getProperty("video_add_cehcked")))
+					.click();
+			driver.findElement(By.xpath(OR.getProperty("video_to_list")))
+					.click();
+			driver.findElement(By.xpath(OR.getProperty("video_create_list")))
+					.click();
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+			String listName = "List" + dateFormat.format(date).toString();
+			driver.findElement(By.xpath(OR.getProperty("video_list_name")))
+					.sendKeys(listName);
+			driver.findElement(By.xpath(OR.getProperty("video_list_create")))
+					.click();
+			driver.findElement(By.xpath(OR.getProperty("video_list_save")))
+					.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " Unable to write "
+					+ e.getMessage();
 		}
 		return Constants.KEYWORD_PASS;
 

@@ -18,7 +18,7 @@
     </licenses>
 
     <properties>
-        <org.selenium-version>2.48.2</org.selenium-version>
+        <!-- <org.selenium-version>2.48.2</org.selenium-version> -->
         <org.fitnesse-version>20130531</org.fitnesse-version>
         <jdk.version>1.7</jdk.version>
         <org.springframework-version>3.2.3.RELEASE</org.springframework-version>
@@ -29,11 +29,12 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>${org.selenium-version}</version>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>2.53.0</version>
+		</dependency>
        
         <dependency>
             <groupId>com.jayway.android.robotium</groupId>

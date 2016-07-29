@@ -84,7 +84,6 @@ public class DriverScript {
         APP_LOGS.debug("Intialize Suite xlsx");
         suiteXLS = new Xls_Reader("src\\test\\java\\com\\genvideo\\xls\\Suite.xlsx");
 
-
         for(currentSuiteID=2;currentSuiteID<=suiteXLS.getRowCount(Constants.TEST_SUITE_SHEET);currentSuiteID++){
 
             APP_LOGS.debug(suiteXLS.getCellData(Constants.TEST_SUITE_SHEET, Constants.Test_Suite_ID, currentSuiteID)+" -- "+  suiteXLS.getCellData("Test Suite", "Runmode", currentSuiteID));
@@ -109,7 +108,6 @@ public class DriverScript {
                                 APP_LOGS.debug("Iteration number "+(currentTestDataSetID-1));
                                 // checking the runmode for the current data set
                                 if(currentTestSuiteXLS.getCellData(currentTestCaseName, Constants.RUNMODE, currentTestDataSetID).equals(Constants.RUNMODE_YES)){
-
                                     // iterating through all keywords
                                     executeKeywords(); // multiple sets of data
                                 }
