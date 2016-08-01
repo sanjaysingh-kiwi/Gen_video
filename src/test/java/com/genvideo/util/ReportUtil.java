@@ -34,7 +34,6 @@ public class ReportUtil {
         Xls_Reader suiteXLS = new Xls_Reader(System.getProperty("user.dir")+"//src//test//java//com//genvideo//xls//Suite.xlsx");
 
 
-
         // create index.html
         String indexHtmlPath=result_FolderName +"/index.html";
         new File(indexHtmlPath).createNewFile();
