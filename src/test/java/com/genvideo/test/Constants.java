@@ -1,6 +1,13 @@
 package com.genvideo.test;
 
+import java.util.Random;
+
 public class Constants {
+	
+	static {
+		Random random = new Random();
+		index = random.nextInt(5) + 1;
+	}
 
 
     public static String TEST_SUITE_SHEET="Test Suite";
@@ -24,6 +31,7 @@ public class Constants {
     public static String CONFIG="config";
     public static final String SUITE_ID = "TSID";
     public static final String DESCRIPTION = "Description";
+    public static final int index;
 
 
 }

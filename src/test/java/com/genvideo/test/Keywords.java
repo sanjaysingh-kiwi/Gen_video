@@ -53,9 +53,12 @@ public class Keywords {
 	// public AppiumDriver<MobileElement> driver1;
 
 	public WebDriver driver;
-	public String campaign_title;
+	public String campaign_title, listName, video_title, affiliateURL;
 	Date date = new Date();
 	SimpleDateFormat dt = new SimpleDateFormat("MMM d, yyyy");
+	String imageLocator, downloadLocation;
+	String slash = System.getProperty("file.separator");
+	String filesLocation = System.getProperty("user.dir") + slash + "Files";
 
 	private DesiredCapabilities getFirefoxCapability(String downloadLocation) {
 
@@ -110,7 +113,7 @@ public class Keywords {
 		// Chrome Driver Path
 
 		DesiredCapabilities capability = null;
-		String downloadLocation = System.getProperty("user.dir");
+		downloadLocation = System.getProperty("user.dir") + slash + "Downloads";
 
 		System.setProperty("webdriver.chrome.driver",
 				"ChromeDriver/chromedriver.exe");
@@ -196,10 +199,14 @@ public class Keywords {
 	 * }
 	 */
 
-	public String clickLink(String object, String data) {
-		APP_LOGS.debug("Clicking on link ");
+	public String emailList(String object, String data) {
+		APP_LOGS.debug("Email the list");
 		try {
-			driver.findElement(By.xpath(OR.getProperty(object))).click();
+			String value = "(//div[contains(text(),'" + listName
+					+ "')]//ancestor::a//button[@type='button'])[2]";
+			driver.findElement(By.xpath(value)).click();
+			driver.findElement(By.id(OR.getProperty(object))).sendKeys(data);
+			driver.findElement(By.xpath("email_send")).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
@@ -207,21 +214,86 @@ public class Keywords {
 		}
 		return Constants.KEYWORD_PASS;
 	}
-	
+
+	private String extractURL(String url) throws InterruptedException {
+		String currentHandle = driver.getWindowHandle();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$(window.open())");
+
+		Set<String> windows = driver.getWindowHandles();
+
+		for (String windowHandle : windows) {
+			if (!windowHandle.equals(currentHandle)) {
+				driver.switchTo().window(windowHandle);
+				driver.navigate().to(url);
+				url = driver.getCurrentUrl();
+				driver.close();
+			}
+		}
+
+		driver.switchTo().window(currentHandle);
+
+		return url;
+	}
+
+	public String clickLink(String object, String data) {
+		APP_LOGS.debug("Clicking on link ");
+		try {
+			String value;
+			if (object.equals("manage_select_preview")) {
+				value = imageLocator + OR.getProperty(object);
+			} else if (object.equals("video_embedCodeOpen")
+					|| object.equals("video_affiliateLinkButton")) {
+				value = "//h4[text()='"
+						+ video_title
+						+ "']/ancestor::div[@class='mtb-15 video-container ng-scope']"
+						+ OR.getProperty(object);
+			} else if (object.equals("video_publishToYoutube")) {
+				value = "//h4[text()='"
+						+ video_title.replace("new", "")
+						+ "']/ancestor::div[@class='mtb-15 video-container ng-scope']"
+						+ OR.getProperty(object);
+			} else
+				value = OR.getProperty(object);
+			driver.findElement(By.xpath(value)).click();
+			if (object.equals("video_affiliateLinkButton")) {
+				String url = driver.findElement(
+						By.xpath("//div[@class='media-body']/a")).getAttribute(
+						"href");
+				affiliateURL = extractURL(url);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
+					+ e.getMessage();
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	private String extractFileName(String object) {
+		String name = driver.findElement(By.xpath(OR.getProperty(object)))
+				.getAttribute("ng-href");
+
+		int startIndex = name.lastIndexOf("/");
+		startIndex++;
+
+		name = name.substring(startIndex);
+
+		return name;
+	}
+
 	public String downloadImage(String object, String data) {
 		APP_LOGS.debug("Downloading the image file");
 		try {
 			String currentWindow = driver.getWindowHandle();
-			
-			WebElement element = driver.findElement(By.xpath(OR.getProperty(object)));
-			Actions builder = new Actions(driver);
-			builder.moveToElement(element).perform();
-			Thread.sleep(3000L);
-			builder.click(element).perform();
-			
+
+			String fileName = extractFileName(object);
+
+			mouseHoverAndClick(object, data);
+
 			Set<String> windows = driver.getWindowHandles();
-			
-			if(windows.size()>1) {
+
+			if (windows.size() > 1) {
 				Iterator<String> iterator = windows.iterator();
 				while (iterator.hasNext()) {
 					String popupHandle = iterator.next().toString();
@@ -231,11 +303,56 @@ public class Keywords {
 					}
 				}
 				driver.switchTo().window(currentWindow);
+			} else {
+				Thread.sleep(10000L);
+				File file = new File(downloadLocation + slash + fileName);
+				File finalFile;
+				if (file.exists()) {
+					File destDir = new File(downloadLocation + slash + "Images");
+					int i = 2;
+					while (new File(destDir.toString(), fileName).exists()) {
+						int startIndex = fileName.lastIndexOf(".");
+						String extenstion = fileName.substring(startIndex);
+						fileName = fileName.substring(0, startIndex) + " (" + i
+								+ ")" + extenstion;
+						i++;
+
+					}
+					finalFile = new File(downloadLocation + slash + fileName);
+					file.renameTo(finalFile);
+					FileUtils.copyFileToDirectory(finalFile, destDir);
+					finalFile.delete();
+					return Constants.KEYWORD_PASS;
+				} else {
+					return Constants.KEYWORD_FAIL + " File not Downloaded.";
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Constants.KEYWORD_FAIL + " -- Not able to download the image"
-					+ e.getMessage();
+			return Constants.KEYWORD_FAIL
+					+ " -- Not able to download the image" + e.getMessage();
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public String mouseHoverAndClick(String object, String data) {
+		APP_LOGS.debug("Mouse hover and then click");
+		try {
+			String value;
+			if (object.equals("manage_select_preview")) {
+				value = imageLocator + OR.getProperty(object);
+			} else
+				value = OR.getProperty(object);
+			WebElement element = driver.findElement(By.xpath(value));
+			Actions builder = new Actions(driver);
+			// builder.moveToElement(element).perform();
+			// Thread.sleep(5000L);
+			builder.moveToElement(element).click(element).perform();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL
+					+ " -- Not able to download the image" + e.getMessage();
 		}
 		return Constants.KEYWORD_PASS;
 	}
@@ -563,16 +680,17 @@ public class Keywords {
 		try {
 
 			// Waiting for player to load
+
 			WebDriverWait wait = new WebDriverWait(driver, 90);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By
 					.xpath("//a[@id='beforeswfanchor0']")));
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("jwplayer().play()");
-			System.out.println("Video started playing");
+			js.executeScript("jwplayer().play(true)");
+			APP_LOGS.debug("Video started playing");
 			Thread.sleep(25000L);
-			js.executeScript("jwplayer().pause()");
-			System.out.println("Video is paused");
+			js.executeScript("jwplayer().pause(true)");
+			APP_LOGS.debug("Video is paused");
 			Thread.sleep(5000L);
 
 			return Constants.KEYWORD_PASS;
@@ -588,11 +706,12 @@ public class Keywords {
 		APP_LOGS.debug("Writing in text box");
 
 		try {
-			if (object.equals("campaign_title")) {
-				SimpleDateFormat dateFormat = new SimpleDateFormat(
-						"yyyyMMddHHmmss");
-				data = data.concat(dateFormat.format(date).toString());
-				campaign_title = data;
+			if (object.equals("campaign_title") || object.equals("video_title")) {
+				data = getUniqueString(data);
+				if (object.equals("campaign_title"))
+					campaign_title = data;
+				else if (object.equals("video_title"))
+					video_title = data;
 			}
 			driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(data);
 		} catch (Exception e) {
@@ -1143,7 +1262,7 @@ public class Keywords {
 	}
 
 	public String enter(String object, String data) {
-		APP_LOGS.debug("Going back one page");
+		APP_LOGS.debug("Pressing Enter");
 		try {
 			driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(
 					Keys.ENTER);
@@ -1613,8 +1732,13 @@ public class Keywords {
 		try {
 
 			Thread.sleep(3000L);
-			WebElement menu = driver.findElement(By.xpath(OR
-					.getProperty(object)));
+			WebElement menu;
+			if (object.equals("manage_select_image")) {
+				imageLocator = "(" + OR.getProperty(object) + ")["
+						+ Constants.index + "]";
+				menu = driver.findElement(By.xpath(imageLocator));
+			} else
+				menu = driver.findElement(By.xpath(OR.getProperty(object)));
 			Actions builder = new Actions(driver);
 			builder.moveToElement(menu).build().perform();
 
@@ -1624,7 +1748,6 @@ public class Keywords {
 					+ e.getMessage();
 		}
 		return Constants.KEYWORD_PASS;
-
 	}
 
 	public String mouseHoverCss(String object, String data) {
@@ -2025,8 +2148,14 @@ public class Keywords {
 
 	}
 
+	private String getUniqueString(String phrase) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		String text = phrase + dateFormat.format(date).toString();
+		return text;
+	}
+
 	public String createVideoList(String object, String data) {
-		APP_LOGS.debug("Create and Mail video lists");
+		APP_LOGS.debug("Creating video lists");
 		try {
 			List<WebElement> element = driver.findElements(By.xpath(OR
 					.getProperty("checkboxes_video")));
@@ -2037,20 +2166,39 @@ public class Keywords {
 				element.get(limit).click();
 				limit--;
 			}
+			WebDriverWait wait = new WebDriverWait(driver, 20);
 			driver.findElement(By.xpath(OR.getProperty("video_add_cehcked")))
 					.click();
 			driver.findElement(By.xpath(OR.getProperty("video_to_list")))
 					.click();
 			driver.findElement(By.xpath(OR.getProperty("video_create_list")))
 					.click();
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-			String listName = "List" + dateFormat.format(date).toString();
+			listName = getUniqueString("List");
 			driver.findElement(By.xpath(OR.getProperty("video_list_name")))
 					.sendKeys(listName);
-			driver.findElement(By.xpath(OR.getProperty("video_list_create")))
-					.click();
-			driver.findElement(By.xpath(OR.getProperty("video_list_save")))
-					.click();
+			Thread.sleep(5000L);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR
+					.getProperty("video_list_create"))));
+			WebElement createList = driver.findElement(By.xpath(OR
+					.getProperty("video_list_create")));
+			Thread.sleep(5000L);
+			createList.click();
+			Thread.sleep(3000L);
+			try {
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By
+						.xpath(OR.getProperty("video_list_save"))));
+				driver.findElement(By.xpath(OR.getProperty("video_list_save")))
+						.click();
+			} catch (Exception e) {
+				driver.findElement(
+						By.xpath(OR.getProperty("video_list_create"))).click();
+				Thread.sleep(2000L);
+				driver.findElement(By.xpath(OR.getProperty("video_list_save")))
+						.click();
+			} finally {
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By
+						.xpath(OR.getProperty("video_list_save"))));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " Unable to write "
@@ -2078,6 +2226,69 @@ public class Keywords {
 					.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir")
 					+ "//screenshots//" + filename + ".jpg"));
+		}
+	}
+
+	public String video_uploadnewImage(String object, String data) {
+		APP_LOGS.debug("uploadnewImage");
+		try {
+			WebElement element = driver.findElement(By
+					.xpath("(//input[@type='file'])[4]"));
+			element.sendKeys(filesLocation + slash + data);
+
+			long timeoutInSeconds = 30;
+			new WebDriverWait(driver, timeoutInSeconds)
+					.until(ExpectedConditions.visibilityOfElementLocated(By
+							.xpath("//p[@ng-show='imageName']")));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL
+					+ "Unable to go back, Check if its open" + e.getMessage();
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public String video_uploadNewVideo(String object, String data) {
+		APP_LOGS.debug("uploadNewVideo");
+		try {
+			WebElement element = driver.findElement(By
+					.xpath("(//input[@type='file'])[1]"));
+			element.sendKeys(filesLocation + slash + data);
+
+			long timeoutInSeconds = 30;
+			new WebDriverWait(driver, timeoutInSeconds)
+					.until(ExpectedConditions.visibilityOfElementLocated(By
+							.xpath("//div[text()='VIDEO UPLOADED']")));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL
+					+ "Unable to go back, Check if its open" + e.getMessage();
+		}
+		return Constants.KEYWORD_PASS;
+	}
+
+	public String verifyURL(String object, String data) {
+		APP_LOGS.debug("Verifying the Amazon URL");
+		try {
+			JavascriptExecutor script = (JavascriptExecutor) driver;
+			Thread.sleep(10000L);
+			String desText = script
+					.executeScript(
+							"return $('.form-control.ng-pristine.ng-valid:eq(1)').val()")
+					.toString();
+			int index = desText.lastIndexOf("http");
+			String url = desText.substring(index);
+			url = extractURL(url);
+			if (url.contains(affiliateURL) && url.contains("amazon"))
+				return Constants.KEYWORD_PASS;
+			else
+				return Constants.KEYWORD_FAIL + " URL not similar";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Constants.KEYWORD_FAIL
+					+ "Exception occured while verifying url" + e.getMessage();
 		}
 	}
 }
