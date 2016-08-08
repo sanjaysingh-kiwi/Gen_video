@@ -202,11 +202,12 @@ public class Keywords {
 	public String emailList(String object, String data) {
 		APP_LOGS.debug("Email the list");
 		try {
+			waitForSpinner(OR.getProperty("wide_spinner"));
 			String value = "(//div[contains(text(),'" + listName
 					+ "')]//ancestor::a//button[@type='button'])[2]";
 			driver.findElement(By.xpath(value)).click();
 			driver.findElement(By.id(OR.getProperty(object))).sendKeys(data);
-			driver.findElement(By.xpath("email_send")).click();
+			driver.findElement(By.xpath(OR.getProperty("email_send"))).click();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Constants.KEYWORD_FAIL + " -- Not able to click on link"
@@ -738,16 +739,16 @@ public class Keywords {
 
 	}
 
-	public void waitForSpinner() {
+	public void waitForSpinner(String value) {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By
-				.xpath("//div[@class='spinner-container short ng-hide']")));
+				.xpath(value)));
 	}
 
 	public String setCampaignStatus(String object, String data) {
 		APP_LOGS.debug("Setting Campaign Status");
 		try {
-			waitForSpinner();
+			waitForSpinner(OR.getProperty("short_spinner"));
 			WebElement dropdown = driver.findElement(By.xpath(OR
 					.getProperty(object)));
 			Select select = new Select(dropdown);
@@ -1222,7 +1223,7 @@ public class Keywords {
 	public String campaignDueDate(String object, String data) {
 		APP_LOGS.debug("campaignDueDate");
 		try {
-			waitForSpinner();
+			waitForSpinner(OR.getProperty("short_spinner"));
 			Calendar calender = new GregorianCalendar();
 			calender.setTime(date);
 			calender.add(Calendar.DATE, 30);
